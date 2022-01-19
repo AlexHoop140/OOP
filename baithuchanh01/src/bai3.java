@@ -3,14 +3,14 @@ public class bai3 {
         float max = -9999f;
         float sum = 0f;
         float temp = 0f;
-        for (int i = 0; i < args.length; i++) {
-            try{
-                temp = Float.parseFloat(args[i]);
-            }catch (NumberFormatException e){
+        for (String arg : args) {
+            try {
+                temp = Float.parseFloat(arg);
+            } catch (NumberFormatException e) {
                 temp = 0f;
             }
             sum += temp;
-            if(max < temp){
+            if (max < temp) {
                 max = temp;
             }
         }
