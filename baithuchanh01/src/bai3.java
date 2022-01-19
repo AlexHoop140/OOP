@@ -8,6 +8,7 @@ public class bai3 {
                 temp = Float.parseFloat(arg);
             } catch (NumberFormatException e) {
                 temp = 0f;
+                System.out.println(e.getMessage());
             }
             sum += temp;
             if (max < temp) {
