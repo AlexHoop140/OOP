@@ -9,7 +9,7 @@ public class bai3 {
             try {
                 temp = Float.parseFloat(arg);
             } catch (NumberFormatException e) {
-                temp = 0f;
+                temp = 0;
                 System.out.println(e.getMessage());
             }
             sum += temp;
