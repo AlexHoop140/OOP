@@ -1,32 +1,39 @@
-import java.util.Arrays;
+package lab1;
+
 import java.util.Scanner;
 
-public class bai8 {
+public class CountNumberXinList {
     public static void main(String[] args) {
         int n;
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter how many elements there are in the list: ");
         n  = scanner.nextInt();
 
         int[] array = new int[n];
+        System.out.println("Enter list of number: ");
         for (int i = 0; i < array.length; i++) {
             array[i] = scanner.nextInt();
         }
 
+        System.out.println("Enter element you want to count in the list: ");
         int x = scanner.nextInt();
         int cnt = 0;
-        for (int i = 0; i < array.length; i++) {
-            if(x == array[i])
+        for (int k : array) {
+            if (x == k)
                 cnt++;
         }
 
+        System.out.println("There are " + cnt + " number " + x + " in the list");
+
 //        Arrays.sort(array);
-        mergeSort(array);
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+        CountNumberXinList myObj = new CountNumberXinList();
+        myObj.mergeSort(array);
+        System.out.println("Sorted list: ");
+        for (int j : array) {
+            System.out.println(j);
         }
-        System.out.println("Số lần xuất hiện của " + x + " là " + cnt);
     }
-    public static void mergeSort(int[] array) {
+    public void mergeSort(int[] array) {
 
         int length = array.length;
         if (length <= 1) return; //base case

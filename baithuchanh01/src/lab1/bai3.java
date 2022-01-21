@@ -1,13 +1,15 @@
+package lab1;
+
 public class bai3 {
     public static void main(String[] args) {
-        float max = -9999f;
-        float sum = 0f;
-        float temp = 0f;
+        double max = -9999;
+        double sum = 0;
+        double temp = 0;
         for (String arg : args) {
             try {
                 temp = Float.parseFloat(arg);
             } catch (NumberFormatException e) {
-                temp = 0f;
+                temp = 0;
                 System.out.println(e.getMessage());
             }
             sum += temp;
