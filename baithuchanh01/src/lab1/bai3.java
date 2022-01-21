@@ -2,9 +2,9 @@ package lab1;
 
 public class bai3 {
     public static void main(String[] args) {
-        float max = -9999f;
-        float sum = 0f;
-        float temp = 0f;
+        double max = -9999;
+        double sum = 0;
+        double temp = 0;
         for (String arg : args) {
             try {
                 temp = Float.parseFloat(arg);
