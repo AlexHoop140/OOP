@@ -22,6 +22,7 @@ public class CountNumberXinList {
             if (x == k)
                 cnt++;
         }
+
         System.out.println("There are " + cnt + " number " + x + " in the list");
 
 //        Arrays.sort(array);
