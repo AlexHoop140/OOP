@@ -1,3 +1,5 @@
+package lab1;
+
 public class bai3 {
     public static void main(String[] args) {
         float max = -9999f;
