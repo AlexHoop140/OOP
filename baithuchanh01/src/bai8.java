@@ -5,13 +5,16 @@ public class bai8 {
     public static void main(String[] args) {
         int n;
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhap n: ");
         n  = scanner.nextInt();
 
         int[] array = new int[n];
+        System.out.println("Nhap mang n phan tu: ");
         for (int i = 0; i < array.length; i++) {
             array[i] = scanner.nextInt();
         }
 
+        System.out.println("Nhap x: ");
         int x = scanner.nextInt();
         int cnt = 0;
         for (int i = 0; i < array.length; i++) {
@@ -24,8 +27,9 @@ public class bai8 {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
-        System.out.println("Số lần xuất hiện của " + x + " là " + cnt);
+        System.out.println("So lan xuat hien cua " + x + " là " + cnt);
     }
+
     public static void mergeSort(int[] array) {
 
         int length = array.length;
