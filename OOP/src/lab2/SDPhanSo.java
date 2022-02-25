@@ -25,19 +25,24 @@ public class SDPhanSo {
 
         PhanSo x = new PhanSo();
         PhanSo y = new PhanSo();
+
         System.out.println("Nhap phan so x");
         x.nhapGiaTri();
+
         System.out.println("Nhap phan so y");
         y.nhapGiaTri();
+
         System.out.println("Nghich dao cua x");
-        x.giaTriNghichDao();
+        x = x.giaTriNghichDao();
+        x.inGiaTri();
+
         x = x.cong(y);
         System.out.println("Tong x + y");
         x.inGiaTri();
 
         int n;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhap vao n: ");
+        System.out.print("Nhap vao n: ");
         n = sc.nextInt();
         PhanSo []ds = new PhanSo[n];
         for(int i = 0; i < n; i++){

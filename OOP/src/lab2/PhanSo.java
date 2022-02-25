@@ -18,13 +18,12 @@ public class PhanSo {
 
     public void nhapGiaTri(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhap tu so: ");
-        int tu = sc.nextInt();
-        tuSo = tu;
-        System.out.println("Nhap mau so: ");
+        System.out.print("Nhap tu so: ");
+        tuSo = sc.nextInt();
+        System.out.print("Nhap mau so: ");
         int mau = sc.nextInt();
         while(mau == 0){
-            System.out.println("Nhap lai mau");
+            System.out.print("Nhap lai mau: ");
             mau = sc.nextInt();
         }
         mauSo = mau;
@@ -46,8 +45,8 @@ public class PhanSo {
         int tempTu = tuSo;
         int tempMau = mauSo;
         if(tempTu == 0){
-            System.out.println("Phan so khong hop le!");
-            System.out.println("Mau so = 1");
+            System.out.println("Phan so khong hop le! Mau so = 0");
+            System.out.println("Gan lai mau so = 1");
             mauSo = 1;
         }else{
             mauSo = tempTu;
@@ -58,18 +57,15 @@ public class PhanSo {
     public PhanSo giaTriNghichDao(){
         PhanSo nghichDao = new PhanSo();
         if(tuSo == 0){
-            System.out.println("Phan so khong hop le!");
-            System.out.println("Mau so = 1");
-            nghichDao.mauSo = 1;
-        }else {
-            nghichDao.tuSo = mauSo;
-            nghichDao.mauSo = tuSo;
-        }
+            System.out.println("Phan so khong hop le! Mau so = 0");
+            System.out.println("Gan lai mau so = 1");
+            nghichDao = new PhanSo(mauSo, 1);
+        }else nghichDao = new PhanSo(mauSo, tuSo);
         return nghichDao;
     }
 
     public double giaTriThucPhanSo(){
-        return tuSo/mauSo;
+        return (double) tuSo/mauSo;
     }
 
     public boolean lonHon(PhanSo a){

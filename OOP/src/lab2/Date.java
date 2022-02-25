@@ -23,11 +23,11 @@ public class Date {
     public void input(){
         Scanner sc = new Scanner(System.in);
         do{
-            System.out.println("Enter day: ");
+            System.out.print("Enter day: ");
             d = sc.nextInt();
-            System.out.println("Enter month: ");
+            System.out.print("Enter month: ");
             m = sc.nextInt();
-            System.out.println("Enter year: ");
+            System.out.print("Enter year: ");
             y = sc.nextInt();
         }while(!isValid());
     }
