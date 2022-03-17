@@ -16,6 +16,12 @@ public class Date {
         y = y1;
     }
 
+    public Date(Date a){
+        d = a.d;
+        m = a.m;
+        y = a.y;
+    }
+
     public void show(){
         System.out.println(d + "/" + m + "/" + y);
     }
@@ -58,6 +64,10 @@ public class Date {
             c = c.NextDay();
         }
         return c;
+    }
+
+    public String toString(){
+        return d + "/" + m + "/" + y;
     }
 
 }
