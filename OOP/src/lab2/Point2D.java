@@ -15,10 +15,10 @@ public class Point2D {
         y = y1;
     }
 
-//    public Point2D(int x, int y){
-//        this.x = x; // Không có this thì x, y sẽ là reference
-//        this.y = y;
-//    }
+    public Point2D(Point2D d){
+        x = d.x;
+        y = d.y;
+    }
 
     public Point2D(int n){
         x = y = n;
@@ -44,15 +44,24 @@ public class Point2D {
     public float dist(){
         return (float) Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
     }
+
     public float dist(Point2D B){
         return (float) Math.sqrt(Math.pow(x - B.x, 2) + Math.pow(y - B.y, 2));
     }
+
     public int getX(){
         return x;
     }
+
     public int getY(){
         return y;
     }
 
+    public String toString() {
+        return "Point2D{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }
 

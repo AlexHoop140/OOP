@@ -6,6 +6,7 @@ public class StudentNode {
     private StudentNode sorted;
 
     public StudentNode(){
+        data = new Student();
         next = null;
     }
 
@@ -27,12 +28,12 @@ public class StudentNode {
         if(head == null) return null;
         StudentNode n = head;
 
-        if(n.data == s){
+        if(n.data.getId().equals(s.getId())){
             return head.next;
         }
 
         while(n.next != null){
-            if(n.next.data == s){
+            if(n.next.data.getId().equals(s.getId())){
                 n.next = n.next.next;
                 return head;
             }
@@ -43,66 +44,49 @@ public class StudentNode {
 
     public void print(){
         StudentNode curr = this;
-        while(curr.next != null){
-            curr.next.data.show();
-            curr = curr.next;
-        }
-    }
-
-    public StudentNode mergeSort(StudentNode head)
-    {
-        if (head.next == null)
-            return head;
-
-        StudentNode mid = findMid(head);
-        StudentNode head2 = mid.next;
-        mid.next = null;
-        StudentNode newHead1 = mergeSort(head);
-        StudentNode newHead2 = mergeSort(head2);
-        StudentNode finalHead = merge(newHead1, newHead2);
-
-        return finalHead;
-    }
-
-    public StudentNode merge(StudentNode head1, StudentNode head2)
-    {
-        StudentNode merged = new StudentNode();
-        StudentNode temp = merged;
-
-        while (head1.next != null && head2 != null) {
-            if (head1.next.data.getLName().compareTo(head2.data.getLName()) < 0) {
-                temp.next = head1;
-                head1 = head1.next;
+        if(curr.next == null)
+            System.out.println("Empty list!");
+        else
+            while(curr.next != null){
+                curr.next.data.show();
+                curr = curr.next;
             }
-            else {
-                temp.next = head2;
-                head2 = head2.next;
-            }
-            temp = temp.next;
-        }
-
-        while (head1 != null) {
-            temp.next = head1;
-            head1 = head1.next;
-            temp = temp.next;
-        }
-
-        while (head2 != null) {
-            temp.next = head2;
-            head2 = head2.next;
-            temp = temp.next;
-        }
-        return merged.next;
     }
 
-    public StudentNode findMid(StudentNode head)
+    void insertionSort(StudentNode head)
     {
-        StudentNode slow = head, fast = head.next;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+        sorted = null;
+        StudentNode current = head;
+
+        while (current != null)
+        {
+            StudentNode next = current.next;
+            sortedInsert(current);
+            current = next;
         }
-        return slow;
+        head = sorted;
+    }
+
+    public StudentNode sortedInsert(StudentNode newnode)
+    {
+        if ((sorted == null) || (sorted.data.getName().compareTo(newnode.data.getName()) >= 0))
+        {
+            newnode.next = sorted;
+            sorted = newnode;
+        }
+        else
+        {
+            StudentNode current = sorted;
+            while (current.next != null && current.next.data.getName().compareTo(newnode.data.getName()) < 0)
+            {
+                current = current.next;
+            }
+            newnode.next = current.next;
+            current.next = newnode;
+        }
+
+        return newnode;
+
     }
 
     public Student getData() {
