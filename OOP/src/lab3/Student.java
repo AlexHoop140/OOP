@@ -154,4 +154,12 @@ public class Student {
     public String[] getMark() {
         return mark;
     }
+
+    public String getUser(){
+        return "";
+    }
+
+    public String getEmail(){
+        return "";
+    }
 }
